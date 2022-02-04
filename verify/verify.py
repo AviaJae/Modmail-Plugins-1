@@ -9,16 +9,16 @@ class Verify(commands.Cog):
         self.bot = bot
         self.maincolor = 0x06c9ff
         self.errorcolor = 0xFF0000
-        self.log_channel = 737378978410790912  # ID of the log channel
-        self.defaultRole = 586643846780158087  # ID of the Discord Member role
-        self.unverifiedRole = 737416620951207987 # ID of unverified role
+        self.log_channel = 939062886842634240  # ID of the log channel
+        self.defaultRole = 939052610592321546  # ID of the Discord Member role
+        self.unverifiedRole = 939055119151018004 # ID of unverified role
 
     @commands.command(name="send-verify")
     @commands.has_permissions(administrator=True)
     async def sendverifymsg(self, ctx):
         embed = discord.Embed(
             title="**Verification**",
-            description="To gain access to the Team Hope Discord Server, you will have to verify.\n\nVerifying means that you have agreed to our Rules and Guidelines\n\nOur Rules and Guidelines can be found in <#586650192896589840> and <#737311986697764954>!\n\nTo verify, please type `verify` in this channel!",
+            description="To gain access to the Jeddy's Community Discord Server, you will have to verify.  in <#939055748443410522>!\n\nTo verify, please type `verify` to start the verification proccess.",
             color=self.maincolor
         )
         await ctx.send(embed=embed)
@@ -29,7 +29,7 @@ class Verify(commands.Cog):
             return
 
         else:
-            if message.channel.id == 737356477404151856:
+            if message.channel.id == 939055748443410522:
                 if message.content.lower() == "verify":
                     guild = message.guild
                     role = guild.get_role(self.defaultRole)
@@ -49,7 +49,7 @@ class Verify(commands.Cog):
                     try:
                         embed = discord.Embed(
                             title="Verification",
-                            description="You are now verified in the Team Hope Discord Server!",
+                            description="You are now verified in the Jeddy's Community Discord Server!",
                             color=self.maincolor
                         )
                         await message.author.send(embed=embed)
