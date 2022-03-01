@@ -18,7 +18,7 @@ class Verify(commands.Cog):
     async def sendverifymsg(self, ctx):
         embed = discord.Embed(
             title="**Verification**",
-            description="To gain access to the RS Games Recreation Discord Server, you are required to verify in #948183543140479027. To start the verification process, please type ``?verify``.",
+            description="To gain access to the RS Games Recreation Discord Server, you are required to verify in #verify. To start the verification process, please type ``?verify``.",
             color=self.maincolor
         )
         await ctx.send(embed=embed)
@@ -30,7 +30,7 @@ class Verify(commands.Cog):
 
         else:
             if message.channel.id == 948183543140479027:
-                if message.content.lower() == "?verify":
+                if message.content.lower() == "verify":
                     guild = message.guild
                     role = guild.get_role(self.defaultRole)
                     un = guild.get_role(self.unverifiedRole)
