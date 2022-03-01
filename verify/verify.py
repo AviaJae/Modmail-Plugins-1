@@ -9,16 +9,16 @@ class Verify(commands.Cog):
         self.bot = bot
         self.maincolor = 0x06c9ff
         self.errorcolor = 0xFF0000
-        self.log_channel = 939062886842634240  # ID of the log channel
-        self.defaultRole = 939052610592321546  # ID of the Discord Member role
-        self.unverifiedRole = 939055119151018004 # ID of unverified role
+        self.log_channel = 948191586901184522  # ID of the log channel
+        self.defaultRole = 948181880426102804  # ID of the Discord Member role
+        self.unverifiedRole = 948182691084390420 # ID of unverified role
 
     @commands.command(name="send-verify")
     @commands.has_permissions(administrator=True)
     async def sendverifymsg(self, ctx):
         embed = discord.Embed(
             title="**Verification**",
-            description="To gain access to the Jeddy's Community Discord Server, you will have to verify.  in <#939055748443410522>!\n\nTo verify, please type `verify` to start the verification proccess.",
+            description="To gain access to the RS Games Recreation Discord Server, you are required to verify in #948183543140479027. To start the verification process, please type ``?verify``.",
             color=self.maincolor
         )
         await ctx.send(embed=embed)
@@ -29,8 +29,8 @@ class Verify(commands.Cog):
             return
 
         else:
-            if message.channel.id == 939055748443410522:
-                if message.content.lower() == "verify":
+            if message.channel.id == 948183543140479027:
+                if message.content.lower() == "?verify":
                     guild = message.guild
                     role = guild.get_role(self.defaultRole)
                     un = guild.get_role(self.unverifiedRole)
@@ -49,7 +49,7 @@ class Verify(commands.Cog):
                     try:
                         embed = discord.Embed(
                             title="Verification",
-                            description="You are now verified in the Jeddy's Community Discord Server!",
+                            description="You are now verified in the RS Games Recreation Discord Server!",
                             color=self.maincolor
                         )
                         await message.author.send(embed=embed)
